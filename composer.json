@@ -1,0 +1,54 @@
+{
+    "name": "render-labs/piste",
+    "description": "Easily get data about your Models.",
+    "keywords": [
+        "render-labs",
+        "piste"
+    ],
+    "homepage": "https://github.com/render-labs/piste",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sam Newby",
+            "email": "sam@renderlabs.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RenderLabs\\Piste\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RenderLabs\\Piste\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RenderLabs\\Piste\\PisteServiceProvider"
+            ],
+            "aliases": {
+                "Piste": "RenderLabs\\Piste\\PisteFacade"
+            }
+        }
+    }
+}
